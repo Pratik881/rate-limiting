@@ -3,7 +3,6 @@ const cors=require('cors')
 const routes=require('./routes/route')
 const rateLimit=require('express-rate-limit')
 const app=express()
-app.use(cors())
 //rate limiting
 const limiter=rateLimit({
     windowMs:15*60*1000,
@@ -14,7 +13,7 @@ app.use(limiter)
 app.set('trust-proxy',1)
 app.use(routes)
 require('dotenv').config()
-const PORT= 5000
+const PORT=process.env.PORT || 5000
 //enable cors
 
 app.listen(PORT,()=>{
