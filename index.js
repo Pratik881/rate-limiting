@@ -14,7 +14,7 @@ app.use(limiter)
 app.set('trust-proxy',1)
 app.use(routes)
 require('dotenv').config()
-const PORT=process.env.PORT || 5000
+const PORT= 5000
 //enable cors
 
 app.listen(PORT,()=>{
