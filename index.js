@@ -11,6 +11,7 @@ const limiter=rateLimit({
 })
 app.use(limiter)
 app.set('trust-proxy',true)
+app.use(express.static('public'))
 app.use(routes)
 require('dotenv').config()
 const PORT=process.env.PORT || 5000
